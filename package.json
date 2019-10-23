@@ -10,13 +10,18 @@
     "build": "rollup -c",
     "rollup": "rollup",
     "cs": "./node_modules/.bin/eslint --fix .",
-    "precommit": "lint-staged",
     "commit": "./node_modules/.bin/git-cz",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
     "version": "npm run changelog",
     "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "pretest": "npm run build",
     "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
   },
   "repository": {
     "type": "git"
@@ -36,6 +41,7 @@
     "babel-eslint": "^10.0.1",
     "commitizen": "^2.10.1",
     "conventional-changelog-cli": "^2.0.5",
+    "decimal.js-light": "^2.5.0",
     "eslint": "^5.6.1",
     "eslint-config-fbjs": "^2.1.0",
     "eslint-plugin-babel": "^5.2.1",
@@ -43,13 +49,12 @@
     "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-relay": "^0.0.24",
-    "husky": "^1.0.1",
+    "husky": "^3.0.9",
     "jest": "^23.6.0",
     "lint-staged": "^7.3.0",
     "rollup": "^1.25.1",
     "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "decimal.js-light": "^2.5.0"
+    "rollup-plugin-node-resolve": "^5.2.0"
   },
   "lint-staged": {
     "*.js": [
