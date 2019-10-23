@@ -6,29 +6,33 @@
   "module": "dist/esm/index.esm.js",
   "browser": "dist/umd/index.umd.js",
   "scripts": {
-    "doc": "documentation --github --markdown-toc=false readme src/index.js -a public -s \"API\"",
+    "postinstall": "npm build",
     "build": "rollup -c",
-    "rollup": "rollup",
-    "cs": "./node_modules/.bin/eslint --fix .",
+    "pretest": "npm build",
+    "test": "jest",
     "commit": "./node_modules/.bin/git-cz",
-    "version": "npm run changelog",
+    "cs": "./node_modules/.bin/eslint --fix .",
+    "doc": "documentation --github --markdown-toc=false readme src/index.js -a public -s \"API\"",
     "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
-    "test": "jest"
+    "version": "npm run changelog"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm test",
+      "pre-commit": "npm test && lint-staged",
       "commit-msg": "commitlint -e $GIT_PARAMS"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://teeeemoji/cyou-big-number.git"
+    "url": "git+https://github.com/teeeemoji/cyou-big-number.git"
   },
   "keywords": [],
-  "author": "teeeemoji",
-  "license": "ISC",
+  "author": "teeeemoji <teeeemoji@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teeeemoji/cyou-big-number/issues"
+  },
+  "homepage": "https://github.com/teeeemoji/cyou-big-number#readme",
   "peerDependencies": {
     "decimal.js-light": "^2.5.0"
   },
