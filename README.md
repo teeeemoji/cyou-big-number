@@ -1,5 +1,9 @@
 # cyou-big-number
 
+![NPM](https://img.shields.io/npm/l/cyou-big-number)
+![npm](https://img.shields.io/npm/v/cyou-big-number)
+![npm](https://img.shields.io/npm/dy/cyou-big-number)
+
 This package is based on [decimal.js-light](https://www.npmjs.com/package/decimal.js-light) and offer some very simple API for **big decimal**.
 
 -   number | string transform to decimal
@@ -21,6 +25,10 @@ Example:
 ```javascript
 // Supports at least 20 integers to 10 decimals
 n2s('123456789012345678790.12345678901234567890'); // 123456789012345678790.123456789
+
+n2s('9e-10'); // 0.0000000009
+
+n2s(9e-10); // 0.0000000009
 
 // helpful format
 n2s('1.12345000000000'); // 1.12345
