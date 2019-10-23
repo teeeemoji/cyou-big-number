@@ -9,20 +9,24 @@
  * @author teeeemoji.
  * @since 2019-10-21
  */
-import {decimalDiv, decimalPlusToString} from '../src'
-
-const {
-  n2d,
-  d2s,
+import {
   n2s,
   decimalPlus,
   decimalMinus,
-  decimalTimes
-} = require('../dist/esm/index.esm.js')
-import Decimal from 'decimal.js-light'
+  decimalTimes,
+  decimalDiv
+} from '../src'
 
 describe('Number format', function () {
   test('digitizer accuracy from 10^20 to 10^-10', function () {
+    expect(
+      n2s('9e-10')
+    ).toBe('0.0000000009')
+
+    expect(
+      n2s(9e-10)
+    ).toBe('0.0000000009')
+
     expect(
       n2s('123456789012345678790.12345678901234567890')
     ).toBe('123456789012345678790.123456789')

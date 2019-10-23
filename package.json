@@ -78,6 +78,11 @@
     }
   },
   "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "./src/*.{js,jsx}"
+    ],
+    "coverageDirectory": "coverage",
     "testMatch": [
       "**/__test{s,}__/*.(spec|test).js"
     ]
