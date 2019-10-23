@@ -1,0 +1,75 @@
+{
+  "name": "cyou-big-number",
+  "version": "0.0.1",
+  "description": "see-you-big-number",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "browser": "dist/umd/index.js",
+  "typings": "dist/esm/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "rollup": "rollup",
+    "cs": "./node_modules/.bin/eslint --fix .",
+    "precommit": "lint-staged",
+    "commit": "./node_modules/.bin/git-cz",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "version": "npm run changelog",
+    "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "pretest": "npm run build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "teeeemoji",
+  "license": "ISC",
+  "peerDependencies": {
+    "decimal.js-light": "^2.5.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@types/jest": "^24.0.19",
+    "autoroll": "^0.2.0",
+    "babel-eslint": "^10.0.1",
+    "commitizen": "^2.10.1",
+    "conventional-changelog-cli": "^2.0.5",
+    "eslint": "^5.6.1",
+    "eslint-config-fbjs": "^2.1.0",
+    "eslint-plugin-babel": "^5.2.1",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-relay": "^0.0.24",
+    "husky": "^1.0.1",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.3.0",
+    "rollup": "^1.25.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "decimal.js-light": "^2.5.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/eslint --fix",
+      "git add "
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "testMatch": [
+      "**/__test{s,}__/*.(spec|test).js"
+    ]
+  }
+}
