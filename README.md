@@ -1,15 +1,19 @@
 # cyou-big-number
 
+![Travis (.com)](https://img.shields.io/travis/com/teeeemoji/cyou-big-number)
+![Codecov](https://img.shields.io/codecov/c/github/teeeemoji/cyou-big-number?token=8b1462035af64c20adae6bb75dd2cda6)
 ![NPM](https://img.shields.io/npm/l/cyou-big-number)
 ![npm](https://img.shields.io/npm/v/cyou-big-number)
 ![npm](https://img.shields.io/npm/dy/cyou-big-number)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/cyou-big-number?style=plastic)
 ![GitHub last commit](https://img.shields.io/github/last-commit/teeeemoji/cyou-big-number)
 
+Simple decimal arithmetic for the browser and node.js
+
 This package is based on [decimal.js-light](decimal.js) and offer some very simple API for **big decimal**.
 
--   number | string transform to decimal
--   decimal to fixed format
+-   {number | string} transform to decimal
+-   {decimal} to fixed format
 -   decimal arithmetic add/subtract/multiply/divide
 
 Now, see you big number.
@@ -22,10 +26,21 @@ $ npm install cyou-big-number --save
 
 ## Usage
 
-Example:
+### In the Browser
+
+```html
+<script src="dist/umd/index.umd.js"></script>
+```
+
+### In node
 
 ```javascript
 import {numberToString, decimalToString, decimalPlus, decimalMinus, decimalTimes, decimalDiv} from 'cyou-big-number'
+```
+
+## Examples
+
+```javascript
 // Supports at least 20 integers to 10 decimals
 numberToString('123456789012345678790.12345678901234567890'); // '123456789012345678790.123456789'
 numberToString('9e-10'); // '0.0000000009'
@@ -56,7 +71,7 @@ numberToString(
 
 ### numberToDecimalObj
 
-[src/index.js:9-17](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L9-L17 "Source code on GitHub")
+[src/index.js:9-17](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L9-L17 "Source code on GitHub")
 
 #### Parameters
 
@@ -66,13 +81,13 @@ Returns **Decimal**
 
 ### n2d
 
-[src/index.js:24-24](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L24-L24 "Source code on GitHub")
+[src/index.js:24-24](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L24-L24 "Source code on GitHub")
 
 Type: [numberToDecimalObj](#numbertodecimalobj)
 
 ### decimalToString
 
-[src/index.js:38-45](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L38-L45 "Source code on GitHub")
+[src/index.js:38-45](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L38-L45 "Source code on GitHub")
 
 transform String/Number/Decimal to a fixed format
  1\. minFixed &lt;= decimal part length &lt;= maxFixed
@@ -93,7 +108,7 @@ Returns **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 ### d2s
 
-[src/index.js:52-52](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L52-L52 "Source code on GitHub")
+[src/index.js:52-52](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L52-L52 "Source code on GitHub")
 
 This function is alias for decimalToString
 
@@ -101,7 +116,7 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ### numberToString
 
-[src/index.js:59-59](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L59-L59 "Source code on GitHub")
+[src/index.js:59-59](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L59-L59 "Source code on GitHub")
 
 This function is alias for decimalToString, just lik d2s
 
@@ -109,7 +124,7 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ### n2s
 
-[src/index.js:66-66](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L66-L66 "Source code on GitHub")
+[src/index.js:66-66](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L66-L66 "Source code on GitHub")
 
 This function is alias for numberToString
 
@@ -117,7 +132,7 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ### decimalPlus
 
-[src/index.js:75-77](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L75-L77 "Source code on GitHub")
+[src/index.js:75-77](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L75-L77 "Source code on GitHub")
 
 this function receive multiple addends and return the sum in a Decimal Object
 
@@ -130,7 +145,7 @@ Returns **Decimal** sum
 
 ### decimalPlusToString
 
-[src/index.js:86-88](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L86-L88 "Source code on GitHub")
+[src/index.js:86-88](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L86-L88 "Source code on GitHub")
 
 This function is similar as decimalPlus, bug return the sum in a string
 
@@ -143,7 +158,7 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ### decimalMinus
 
-[src/index.js:97-99](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L97-L99 "Source code on GitHub")
+[src/index.js:97-99](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L97-L99 "Source code on GitHub")
 
 this function receive one minuend and multiple subtrahend and return the subtract output in a Decimal Object
 
@@ -156,7 +171,7 @@ Returns **Decimal** minuend
 
 ### decimalMinusToString
 
-[src/index.js:108-110](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L108-L110 "Source code on GitHub")
+[src/index.js:108-110](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L108-L110 "Source code on GitHub")
 
 This function is similar as decimalMinus, bug return the minuend in a string
 
@@ -169,7 +184,7 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ### decimalTimes
 
-[src/index.js:119-121](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L119-L121 "Source code on GitHub")
+[src/index.js:119-121](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L119-L121 "Source code on GitHub")
 
 this function receive one multiplicand and multiple multiplier, return the product in a Decimal Object
 
@@ -182,7 +197,7 @@ Returns **Decimal** the product in a Decimal Object
 
 ### decimalTimesToString
 
-[src/index.js:130-132](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L130-L132 "Source code on GitHub")
+[src/index.js:130-132](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L130-L132 "Source code on GitHub")
 
 This function is similar as decimalTimes, bug return the product in a string
 
@@ -195,7 +210,7 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ### decimalDiv
 
-[src/index.js:141-143](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L141-L143 "Source code on GitHub")
+[src/index.js:141-143](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L141-L143 "Source code on GitHub")
 
 this function receive one dividend and multiple divisor, return the product in a Decimal Object
 
@@ -208,7 +223,7 @@ Returns **Decimal** the dividend in a Decimal Object
 
 ### decimalDivToString
 
-[src/index.js:152-154](https://git@github.com/:teeeemoji/cyou-big-number/blob/e8011f3cd79904e3ee7cd254d9de4ac45356d54f/src/index.js#L152-L154 "Source code on GitHub")
+[src/index.js:152-154](https://git@github.com/:teeeemoji/cyou-big-number/blob/05f4853e3058295c41c4b6078f8c07069413fde7/src/index.js#L152-L154 "Source code on GitHub")
 
 This function is similar as decimalDiv, bug return the dividend in a string
 
@@ -224,8 +239,8 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 -   [decimal.js][decimal.js] - Consistency Made Simple
 
 ## TODOS
--   upload test report and coverage report
--   add test badge & coverage budge
+
+-   Enables functions to support chain calls
 -   add prettier budge
 
 ## License
