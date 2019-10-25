@@ -3,8 +3,10 @@
 ![NPM](https://img.shields.io/npm/l/cyou-big-number)
 ![npm](https://img.shields.io/npm/v/cyou-big-number)
 ![npm](https://img.shields.io/npm/dy/cyou-big-number)
+![npm bundle size](https://img.shields.io/bundlephobia/min/cyou-big-number?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/teeeemoji/cyou-big-number)
 
-This package is based on [decimal.js-light](https://www.npmjs.com/package/decimal.js-light) and offer some very simple API for **big decimal**.
+This package is based on [decimal.js-light](decimal.js) and offer some very simple API for **big decimal**.
 
 -   number | string transform to decimal
 -   decimal to fixed format
@@ -23,18 +25,29 @@ $ npm install cyou-big-number --save
 Example:
 
 ```javascript
+import {numberToString, decimalToString, decimalPlus, decimalMinus, decimalTimes, decimalDiv} from 'cyou-big-number'
 // Supports at least 20 integers to 10 decimals
-n2s('123456789012345678790.12345678901234567890'); // 123456789012345678790.123456789
-
-n2s('9e-10'); // 0.0000000009
-
-n2s(9e-10); // 0.0000000009
+numberToString('123456789012345678790.12345678901234567890'); // '123456789012345678790.123456789'
+numberToString('9e-10'); // '0.0000000009'
+numberToString(9e-10); // '0.0000000009'
 
 // helpful format
-n2s('1.12345000000000'); // 1.12345
+numberToString('1.12345000000000'); // '1.12345'
+numberToString('1.12345000000000', {minFixed: 10}); // '1.1234500000'
+numberToString('1.12345000000000', {maxFixed: 2}); // '1.12'
 
 // No loss of accuracy
-n2s(decimalPlus(0.1, 0.2)); // 0.30
+decimalToString(decimalPlus(0.1, 0.2)); // '0.30'
+
+decimalToString(decimalMinus(5, 1, 1, 1, 1, 1)); // '0.00'
+
+numberToString(
+    decimalTimes(Number.MAX_SAFE_INTEGER, 1000)
+); // '9007199254740991000'
+
+numberToString(
+  decimalDiv(1000, 1000, 1000, 1000)
+); // '0.000001'
 ```
 
 ## API
@@ -208,10 +221,15 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ## Related
 
--   [plop][plop] - Consistency Made Simple
+-   [decimal.js][decimal.js] - Consistency Made Simple
+
+## TODOS
+-   upload test report and coverage report
+-   add test badge & coverage budge
+-   add prettier budge
 
 ## License
 
 This project is licensed under the [MIT license](LICENSE).
 
-[plop]: https://github.com/amwmedia/plop
+[decimal.js]: http://mikemcl.github.io/decimal.js/
