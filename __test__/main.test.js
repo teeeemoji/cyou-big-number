@@ -12,9 +12,13 @@
 import {
   n2s,
   decimalPlus,
+  decimalPlusToString,
   decimalMinus,
+  decimalMinusToString,
   decimalTimes,
-  decimalDiv
+  decimalTimesToString,
+  decimalDiv,
+  decimalDivToString
 } from '../src'
 
 describe('Number format', function () {
@@ -63,7 +67,18 @@ describe('decimalPlus', function () {
   })
 
 })
-
+describe('decimalPlusToString', function () {
+  test('1 + 2 + 3 + 4 === 10', function () {
+    expect(
+      decimalPlusToString(1, 2, 3, 4)
+    ).toBe('10.00')
+  })
+  test('0.1 + 0.2 === 0.3', function () {
+    expect(
+      decimalPlusToString(0.1, 0.2)
+    ).toBe('0.30')
+  })
+})
 
 describe('decimalMinus', function () {
   test('1234567890.1234567890 - 1000000000.000000009 - 200000000.00000008 - 30000000.0000007 === 4567890.123456', function () {
@@ -84,6 +99,18 @@ describe('decimalMinus', function () {
   })
 })
 
+describe('decimalMinusToString', function () {
+  test('1234567890.1234567890 - 1000000000.000000009 - 200000000.00000008 - 30000000.0000007 === 4567890.123456', function () {
+    expect(
+      decimalMinusToString('1234567890.1234567890', '1000000000.000000009', '200000000.00000008', '30000000.0000007')
+    ).toBe('4567890.123456')
+  })
+  test('0.4 - 0.1 === 0.3', function () {
+    expect(
+      decimalMinusToString(0.4, 0.1)
+    ).toBe('0.30')
+  })
+})
 
 describe('decimalTimes', function () {
   test('0.0000000001 * 10000000000 * 2 * 3 === 6', function () {
@@ -105,6 +132,20 @@ describe('decimalTimes', function () {
 })
 
 
+describe('decimalTimesToString', function () {
+  test('0.0000000001 * 10000000000 * 2 * 3 === 6', function () {
+    expect(
+      decimalTimesToString('0.0000000001', '10000000000', 2, 3)
+    ).toBe('6.00')
+  })
+  test('Number.MAX_SAFE_INTEGER * 10 === 90071992547409910', function () {
+    expect(
+      decimalTimesToString(Number.MAX_SAFE_INTEGER, 10)
+    ).toBe('90071992547409910.00')
+  })
+})
+
+
 describe('decimalDiv', function () {
   test('1000 / 1000 / 1000 / 1000 = 0.000001', function () {
     expect(
@@ -121,6 +162,19 @@ describe('decimalDiv', function () {
         {minFixed: 0}
       )
     ).toBe('1.5')
+  })
+})
+
+describe('decimalDivToString', function () {
+  test('1000 / 1000 / 1000 / 1000 = 0.000001', function () {
+    expect(
+      decimalDivToString(1000, 1000, 1000, 1000)
+    ).toBe('0.000001')
+  })
+  test('99999999999999999999.9999999999 / 33333333333333333333.3333333333 / 2 = 1.5', function () {
+    expect(
+      decimalDivToString('99999999999999999999.9999999999', '33333333333333333333.3333333333', 2)
+    ).toBe('1.50')
   })
 })
 
