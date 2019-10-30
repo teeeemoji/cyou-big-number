@@ -1,3 +1,13 @@
+<a name="1.0.5"></a>
+## [1.0.5](https://github.com/teeeemoji/cyou-big-number/compare/v1.0.4...v1.0.5) (2019-10-30)
+
+
+### Bug Fixes
+
+* remove postinstall in scripts ([c15281a](https://github.com/teeeemoji/cyou-big-number/commit/c15281a))
+
+
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/teeeemoji/cyou-big-number/compare/v1.0.3...v1.0.4) (2019-10-30)
 
