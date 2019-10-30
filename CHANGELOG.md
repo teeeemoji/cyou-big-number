@@ -1,3 +1,8 @@
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/teeeemoji/cyou-big-number/compare/v1.0.3...v1.0.4) (2019-10-30)
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/teeeemoji/cyou-big-number/compare/v1.0.2...v1.0.3) (2019-10-25)
 
