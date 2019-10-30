@@ -6,7 +6,6 @@
   "module": "dist/esm/index.esm.js",
   "browser": "dist/umd/index.umd.js",
   "scripts": {
-    "postinstall": "npm run build",
     "build": "rollup -c",
     "pretest": "npm run build",
     "prepublishOnly": "npm test",
