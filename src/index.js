@@ -10,10 +10,10 @@ export function numberToDecimalObj(number) {
   if (number instanceof Decimal) {
     return number
   }
-  if (!number || isNaN(number)) {
+  if (isNaN(number)) {
     throw new Error('please input a Number, or a String of a number')
   }
-  return new Decimal(number)
+  return new Decimal(number || 0)
 }
 
 /**
